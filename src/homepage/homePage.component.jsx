@@ -11,10 +11,11 @@ const HomePage = () => {
 
   console.log(`appState: ${appState}`);
   let updateState = [...appState];
+  const port = process.env.PORT || 3001
 
 
   useEffect(() => {
-    webSocket.current = new WebSocket("wss://stocks.mnet.website");
+    webSocket.current = new WebSocket(`wss://stocks.mnet.website:${port}`);
     webSocket.current.onopen = () => {
       console.log("connection opened");
     };
