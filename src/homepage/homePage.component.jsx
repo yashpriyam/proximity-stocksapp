@@ -11,7 +11,7 @@ const HomePage = () => {
 
   console.log(`appState: ${appState}`);
   let updateState = [...appState];
-  const port = process.env.PORT || 3001
+  const port = process.env.PORT
 
 
   useEffect(() => {
