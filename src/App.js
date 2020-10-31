@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { auth } from "./firebase/firebase.utils";
+import HomePage from "./homepage/homePage.component";
 import LogInButton from "./users/loginButton.component";
-import LogOutButton from "./users/logoutButton.component";
+import { AppStateProvider } from "./appState/globalState.context";
 
 function App() {
   const [user, setUser] = useState("");
@@ -14,7 +15,17 @@ function App() {
     });
   }, [user]);
 
-  return <div className="App">{user ? <LogOutButton /> : <LogInButton />}</div>;
+  return (
+    <div className="App">
+      {user ? (
+        <AppStateProvider>
+          <HomePage />
+        </AppStateProvider>
+      ) : (
+        <LogInButton />
+      )}
+    </div>
+  );
 }
 
 export default App;
