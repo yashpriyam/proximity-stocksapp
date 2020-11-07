@@ -1,7 +1,7 @@
 export const appState = [];
 
 export const reducer = (state, action) => {
-  console.log(state);
+  // console.log(state);
   switch (action.type) {
     case "newPrices":
       state = action.value;

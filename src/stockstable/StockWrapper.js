@@ -60,21 +60,14 @@ const StockWrapper = () => {
   }, [appState]);
 
   const gainLossPercent = (SP, CP) => {
-    let percentCalc, profitOrLoss, difference;
+    let percentCalc;
     if (SP && CP) {
       percentCalc = (((SP - CP) / CP) * 100).toFixed(2);
-      profitOrLoss = percentCalc > 0 ? "Profit" : "Loss";
-      difference = (SP - CP).toFixed(2);
     } else {
       percentCalc = 0;
-      profitOrLoss = 0;
-      difference = 0;
     }
-
     return {
       percentCalc,
-      profitOrLoss,
-      difference,
     };
   };
 
@@ -162,9 +155,9 @@ const StockWrapper = () => {
                           className={
                             percentCalc > 0
                               ? "green-color"
-                              : percentCalc === 0
-                              ? "white-color"
-                              : "red-color"
+                              : percentCalc < 0
+                              ? "red-color"
+                              : "white-color"
                           }
                         >
                           <b>{percentCalc}%</b>
