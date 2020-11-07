@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useContext } from "react";
 import { AppStateContext } from "../appState/globalState.context";
 import LogOutButton from "../users/logoutButton.component";
+import StockWrapper from "../stockstable/StockWrapper"
 
 const HomePage = () => {
   const webSocket = useRef(null);
@@ -9,19 +10,19 @@ const HomePage = () => {
   const [ appState, dispatch ] = stateAndDispatcher;
 
 
-  console.log(`appState: ${appState}`);
+  // console.log(`appState: ${appState}`);
   let updateState = [...appState];
 
 
   useEffect(() => {
-    webSocket.current = new WebSocket(`ws://stocks.mnet.website`);
+    webSocket.current = new WebSocket(`ws://stocks.mnet.website/`);
     webSocket.current.onopen = () => {
       console.log("connection opened");
     };
     webSocket.current.onmessage = (msg) => {
       const data = JSON.parse(msg.data);
       updateState = data;
-      console.log(`data from wss: ${data}`);
+      // console.log(`data from wss: ${data}`);
       dispatch({ type: "newPrices", value: updateState });
     };
     webSocket.current.onclose = () => {
@@ -33,6 +34,7 @@ const HomePage = () => {
   return (
     <div>
       <LogOutButton />
+      <StockWrapper/>
     </div>
   );
 };
