@@ -22,7 +22,7 @@ const customStyles = {
 const StockWrapper = () => {
   const { stateAndDispatcher } = useContext(AppStateContext);
   const [appState] = stateAndDispatcher;
-  const [onHoverRow, setOnHoverRow] = useState(true);
+  // const [onHoverRow, setOnHoverRow] = useState(true);
   const [chartVisible, setChartVisible] = useState(false);
   const [flicktheChanges, setFlickTheChanges] = useState(false);
   const [searchField, setSearchField] = useState("");
@@ -131,9 +131,9 @@ const StockWrapper = () => {
                     <React.Fragment key={stock}>
                       <tr
                         id={stock}
-                        onMouseOver={() => {
-                          setOnHoverRow(true);
-                        }}
+                        // onMouseOver={() => {
+                        //   // setOnHoverRow(true);
+                        // }}
                       >
                         <td className="stock-name">{stock.toUpperCase()}</td>
                         <td>
@@ -162,7 +162,7 @@ const StockWrapper = () => {
                           className={
                             percentCalc > 0
                               ? "green-color"
-                              : percentCalc == 0
+                              : percentCalc === 0
                               ? "white-color"
                               : "red-color"
                           }
