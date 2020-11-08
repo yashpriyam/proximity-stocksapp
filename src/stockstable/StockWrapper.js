@@ -124,9 +124,6 @@ const StockWrapper = () => {
                     <React.Fragment key={stock}>
                       <tr
                         id={stock}
-                        // onMouseOver={() => {
-                        //   // setOnHoverRow(true);
-                        // }}
                       >
                         <td className="stock-name">{stock.toUpperCase()}</td>
                         <td>
