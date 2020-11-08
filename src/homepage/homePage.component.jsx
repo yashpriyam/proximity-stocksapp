@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useContext } from "react";
 import { AppStateContext } from "../appState/globalState.context";
 import LogOutButton from "../users/logoutButton.component";
 import StockWrapper from "../stockstable/StockWrapper"
+var W3CWebSocket = require('websocket').w3cwebsocket;
 
 const HomePage = () => {
   const webSocket = useRef(null);
@@ -15,7 +16,7 @@ const HomePage = () => {
 
 
   useEffect(() => {
-    webSocket.current = new WebSocket(`wss://stocks.mnet.website`);
+    webSocket.current = new W3CWebSocket(`ws://stocks.mnet.website/`);
     webSocket.current.onopen = () => {
       console.log("connection opened");
     };
