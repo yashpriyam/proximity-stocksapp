@@ -16,7 +16,7 @@ const HomePage = () => {
 
 
   useEffect(() => {
-    webSocket.current = new W3CWebSocket(`ws://stocks.mnet.website/`);
+    webSocket.current = new W3CWebSocket(`wss://stocks.mnet.website`);
     webSocket.current.onopen = () => {
       console.log("connection opened");
     };
