@@ -1,0 +1,38 @@
+.stock-table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+  align-items: center;
+}
+.stock-buttons {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: flex-end;
+}
+
+.stock-StockName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stock-StockLastUpadateTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stock-StockPrice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stock-StockTrendArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stock-StockTrendPercent {
+  display: flex;
+  align-items: center;
+}
