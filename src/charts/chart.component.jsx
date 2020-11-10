@@ -45,7 +45,7 @@ const Chart = (props) => {
         selected: 1
       },
       title: {
-        text: `${name} Changes`
+        text: `${name.toUpperCase()} Changes`
       },
       chart: {
         height: 600,
@@ -98,7 +98,7 @@ const Chart = (props) => {
       ]
     };
     return (
-      <div>
+      <div className='chart-container'>
          <ReactHighcharts config = {configPrice}></ReactHighcharts>
       </div>
     )

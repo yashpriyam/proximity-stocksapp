@@ -1,0 +1,45 @@
+.watchlist-container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    border: 1px solid #888;
+}
+.watch-stocks-container{
+    height: 300px;
+}
+
+.dropzone-hovered{
+    background-color: aqua;
+}
+
+.green-color {
+    background-color: green;
+    border-radius: 5px;
+}
+.red-color {
+    background-color: red;
+    border-radius: 5px;
+}
+table{
+    // width: fit-content;
+  
+     tr{
+        // width: 100%;
+        line-height:1.5em;
+        box-shadow: -1px 13px 9px -13px #888888;
+        border: 1px solid #888;
+        border-radius: 5px;
+        td{
+            padding: 5px;
+        }
+        // padding: 5px;
+
+        &:hover{
+            background:#f5f5f5;
+        }
+    }
+}
+
+/* .watch-stocks-container:hover{
+    background-color: aqua;
+} */
