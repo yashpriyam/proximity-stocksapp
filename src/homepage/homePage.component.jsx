@@ -1,31 +1,28 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useRef, useContext, useState } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import { AppStateContext } from "../appState/globalState.context";
 import LogOutButton from "../users/logoutButton.component";
 import StockWrapper from "../stockwrapper/stockWrapper.component";
 import ChartView from "../chartview/chartView.component";
-import StockHistoryTable from "../stockhistorytable/stockHistoryTable.component"
-import WatchList from "../watchlist/watchList.component"
-import ChartVisibilityContext from "../localcontexts/chartVisibility.context"
-import StockHistoryVisibilityContext from "../localcontexts/stockHistoryVisibility.context"
+import StockHistoryTable from "../stockhistorytable/stockHistoryTable.component";
+import WatchList from "../watchlist/watchList.component";
 import "./homePage.style.css";
 
 const HomePage = () => {
   const webSocket = useRef(null);
   const { stateAndDispatcher } = useContext(AppStateContext);
   const [appState, dispatch] = stateAndDispatcher;
-  
 
-  // // console.log(`appState: ${appState}`);
   let updateState = [...appState];
-  const [chartVisible, setChartVisible] = useState(false)
-  const [stockHistoryVisible, setStockHistoryVisible] = useState(false)
 
   useEffect(() => {
     webSocket.current = new WebSocket(`ws://stocks.mnet.website`);
     webSocket.current.onopen = () => {
       console.log("connection opened");
     };
+    webSocket.current.onerror = (msg) => {
+      console.log(msg);
+    }
     webSocket.current.onmessage = (msg) => {
       const data = JSON.parse(msg.data);
       updateState = data;
@@ -34,6 +31,9 @@ const HomePage = () => {
     webSocket.current.onclose = () => {
       webSocket.current.close();
     };
+    webSocket.current.onerror = (msg) => {
+      console.log(msg);
+    }
     return () => webSocket.current.close();
   }, []);
 
@@ -41,29 +41,18 @@ const HomePage = () => {
     <div>
       <LogOutButton />
       <div className="main">
-        <StockHistoryVisibilityContext.Provider value={{
-          stockHistoryVisible,
-          setStockHistoryVisible
-        }}>
-          <div className='watchlist-history-container'>
-          <WatchList/>
-        {stockHistoryVisible && <StockHistoryTable/>}
-          </div>
-        
-        <ChartVisibilityContext.Provider value={{
-          chartVisible,
-          setChartVisible
-        }}>
-          <div className='stockTable-container'>
-          <StockWrapper />
-          </div>
-          
-        
-        <div className='chartview-container'>
-        {chartVisible && <ChartView />}
+        <div className="watchlist-history-container">
+          <WatchList />
+          <StockHistoryTable />
         </div>
-        </ChartVisibilityContext.Provider>
-        </StockHistoryVisibilityContext.Provider>
+
+        <div className="stockTable-container">
+          <StockWrapper />
+        </div>
+
+        <div className="chartview-container">
+          <ChartView />
+        </div>
       </div>
     </div>
   );

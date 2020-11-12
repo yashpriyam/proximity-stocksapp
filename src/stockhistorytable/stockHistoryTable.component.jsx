@@ -12,15 +12,14 @@ const StockHistoryTable = () => {
       <table className="history-table">
         <tbody>
           {Object.keys(stockHistoryObject).map((time) => {
-            const normalizedDateTime = new Date(Number(time) * 1000);
-            // const date = normalizedDateTime.getDate()
-            const hours = normalizedDateTime.getHours();
-            const minutes = "0" + normalizedDateTime.getMinutes();
-            const seconds = "0" + normalizedDateTime.getSeconds();
+            const normalizedTime = new Date(Number(time));
+            const hours = normalizedTime.getHours();
+            const minutes = "0" + normalizedTime.getMinutes();
+            const seconds = "0" + normalizedTime.getSeconds();
             const formattedTime =
               hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
             const priceOfStock = `$${stockHistoryObject[time]}`;
-            // // console.log(date);
+            // console.log(new Date(Number(time)).getHours(), hours);
             return (
               <>
               <div></div>

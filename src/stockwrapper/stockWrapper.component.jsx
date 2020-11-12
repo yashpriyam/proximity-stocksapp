@@ -1,10 +1,8 @@
 import React, { useState, useContext } from "react";
-import "./stockWrapper.style.scss";
-
 import moment from "moment";
 import StockTable from "../stockstable/stocksTable.component";
-// import ChartView from "../chartview/chartView.component"
 import { AppStateContext } from "../appState/globalState.context";
+import "./stockWrapper.style.scss";
 
 const stockDataWithTimeStamp = {};
 let stockDataWithTimeStampCache = {};
@@ -13,7 +11,6 @@ const StockWrapper = () => {
   const { stateAndDispatcher } = useContext(AppStateContext);
   const [appState] = stateAndDispatcher;
 
-  // const [flicktheChanges, setFlickTheChanges] = useState(false);
   const [searchField, setSearchField] = useState("");
 
   const stocksObj = Object.fromEntries(appState);
@@ -44,6 +41,8 @@ const StockWrapper = () => {
   const onSearchChange = (e) => {
     setSearchField(e.target.value);
   };
+
+  
   const stockDataWithTimeStampArray = Object.keys(stockDataWithTimeStampCache);
   const filteredStockDataWithTimeStampArray = stockDataWithTimeStampArray.filter(
     (stockName) => stockName.toLowerCase().includes(searchField.toLowerCase())
@@ -53,7 +52,7 @@ const StockWrapper = () => {
     <>
       <div className="stocks-wrapper">
         <h5>Stocks</h5>
-        <div className='search-container'>
+        <div className="search-container">
           <input placeholder="Search stocks here" onChange={onSearchChange} />
         </div>
         <StockTable
