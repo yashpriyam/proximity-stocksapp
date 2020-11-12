@@ -2,7 +2,7 @@
   "name": "proximity-stocksapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://prox-stock74.com/",
+  "homepage": "http://proxim-stocks-app.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -23,7 +23,7 @@
     "websocket": "^1.0.32"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

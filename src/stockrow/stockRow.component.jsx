@@ -17,25 +17,21 @@ const StockRow = (props) => {
   ] = watchListStockDataDispatcher;
   console.log(watchListStockData);
   const {
-    // appState,
     stock,
     percentCalc,
     formattedTime,
-    stockDataWithTimeStampCache,
-    stockTimeStampArray,
+    currentStockPrice,
     stockDataWithTimeStamp,
   } = props;
 
   const onDragStart = (e, stock) => {
     e.dataTransfer.setData("text/plain", stock);
-
-    //   watchListStockDataReducer({type: 'add', value: watchListDataObject})
   };
 
-  const currentStockPrice =
-    stockDataWithTimeStampCache[stock][
-      stockTimeStampArray[stockTimeStampArray.length - 1]
-    ];
+  // const currentStockPrice =
+  //   stockDataWithTimeStampCache[stock][
+  //     stockTimeStampArray[stockTimeStampArray.length - 1]
+  //   ];
 
   const watchListDataObject = {
     stock,
@@ -45,44 +41,38 @@ const StockRow = (props) => {
   };
   watchListStockDataReducer({ type: "add", value: watchListDataObject });
 
-  //   const [chartVisible, setChartVisible] = useState(false);
   return (
     <Fragment key={stock}>
-      
       <div draggable onDragStart={(e) => onDragStart(e, stock)}>
-        {/* <table> */}
-          {/* <tbody> */}
-            <tr id={stock} className='stock-table-row'>
-              <span className="stock-StockName">
-                <StockName stockname={stock} />
-              </span>
-              <span className="stock-StockLastUpadateTime">
-                <StockLastUpadateTime formattedTime={formattedTime} />
-              </span>
-              <span className="stock-StockPrice">
-                <StockPrice currentStockPrice={currentStockPrice} />
-              </span>
-              <span className="stock-StockTrendArrow">
-                <StockTrendArrow percentCalc={percentCalc} />
-              </span>
+        <tr id={stock} className="stock-table-row">
+          <span className="stock-StockName">
+            <StockName stockname={stock} />
+          </span>
+          <span className="stock-StockLastUpadateTime">
+            <StockLastUpadateTime formattedTime={formattedTime} />
+          </span>
+          <span className="stock-StockPrice">
+            <StockPrice currentStockPrice={currentStockPrice} />
+          </span>
+          <span className="stock-StockTrendArrow">
+            <StockTrendArrow percentCalc={percentCalc} />
+          </span>
 
-              <span className="stock-StockTrendPercent">
-                <StockTrendPercent percentCalc={percentCalc} />
-              </span>
+          <span className="stock-StockTrendPercent">
+            <StockTrendPercent percentCalc={percentCalc} />
+          </span>
 
-              <span className="stock-buttons">
-                <StockChartButton
-                  priceData={stockDataWithTimeStamp[stock]}
-                  nameOfStock={stock}
-                />
-                <StockHistoryButton
-                  priceData={stockDataWithTimeStamp[stock]}
-                  nameOfStock={stock}
-                />
-              </span>
-            </tr>
-          {/* </tbody> */}
-        {/* </table> */}
+          <span className="stock-buttons">
+            <StockChartButton
+              priceData={stockDataWithTimeStamp[stock]}
+              nameOfStock={stock}
+            />
+            <StockHistoryButton
+              priceData={stockDataWithTimeStamp[stock]}
+              nameOfStock={stock}
+            />
+          </span>
+        </tr>
       </div>
     </Fragment>
   );
