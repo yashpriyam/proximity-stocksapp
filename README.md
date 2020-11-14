@@ -9,11 +9,9 @@ A react application which allows you to view stocks data with real time updates,
 
 ![](proximity-stocks-app.gif)
 
-### GIFs can't be paused, so if you want to pause and read through the code flow,
+### GIFs can't be paused, so,
 
-### here is the [YOUTUBE LINK FOR APP STRUCTURE FLOW](https://youtu.be/rzCp5etJPqE), without audio
-
-Currently the tool supports 3 levels of nesting or parent-child relationship.
+### here is the [youtube video explaining the app features](https://youtu.be/Blsl-WBE3KU)
 
 ## Features
 
