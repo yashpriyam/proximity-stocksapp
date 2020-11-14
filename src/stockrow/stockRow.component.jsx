@@ -28,11 +28,6 @@ const StockRow = (props) => {
     e.dataTransfer.setData("text/plain", stock);
   };
 
-  // const currentStockPrice =
-  //   stockDataWithTimeStampCache[stock][
-  //     stockTimeStampArray[stockTimeStampArray.length - 1]
-  //   ];
-
   const watchListDataObject = {
     stock,
     percentCalc,
@@ -44,21 +39,12 @@ const StockRow = (props) => {
   return (
     <Fragment key={stock}>
       <div draggable onDragStart={(e) => onDragStart(e, stock)}>
-        <tr id={stock} className="stock-table-row">
-          <span className="stock-StockName">
-            <StockName stockname={stock} />
-          </span>
-          <span className="stock-StockLastUpadateTime">
-            <StockLastUpadateTime formattedTime={formattedTime} />
-          </span>
-          <span className="stock-StockPrice">
-            <StockPrice currentStockPrice={currentStockPrice} />
-          </span>
-          <span className="stock-StockTrendArrow">
-            <StockTrendArrow percentCalc={percentCalc} />
-          </span>
-
+        <tr className="stock-table-row">
+          <StockName stockname={stock} />
+          <StockLastUpadateTime formattedTime={formattedTime} />
+          <StockPrice currentStockPrice={currentStockPrice} />
           <span className="stock-StockTrendPercent">
+            <StockTrendArrow percentCalc={percentCalc} />
             <StockTrendPercent percentCalc={percentCalc} />
           </span>
 

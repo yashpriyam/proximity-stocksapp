@@ -45,7 +45,7 @@ const Chart = (props) => {
         selected: 1
       },
       title: {
-        text: `${name.toUpperCase()} Changes`
+        text: `${name.toUpperCase()} Stocks Trend `
       },
       chart: {
         height: 600,

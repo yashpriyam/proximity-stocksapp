@@ -1,0 +1,9 @@
+
+.stock-StockLastUpadateTime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 127px;
+    padding: 10px;
+    line-height: 1em;
+  }

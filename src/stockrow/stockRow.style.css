@@ -1,38 +1,66 @@
 .stock-table-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 5px;
   align-items: center;
+  font-size: smaller;
+  height: 35px;
 }
 .stock-buttons {
   display: flex;
   flex-direction: column;
   max-width: 100%;
   align-items: flex-end;
+  padding: 5px;
+  /* width: 30px; */
+}
+.stock-buttons > td{
+    padding: 0px;
 }
 
-.stock-StockName {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* .stock-buttons > td > button{
+    width: 60px;
+    color: white;
+    background-color: rgb(241, 142, 142);
+    font-weight: bold;
+} */
+
+.history-btn {
+    width: 70px;
+    color: black;
+    background-color:white;
+    font-weight: bold;
+    /* font-size: large; */
+    border-radius: 5px;
+    box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
 }
-.stock-StockLastUpadateTime {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.history-btn:hover {
+    cursor: pointer;
+    background-color: rgba(229, 248, 248, 0.705);
+    transform: scale(1.02);
+  }
+.chart-btn{
+    width: 70px;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    /* font-size: large; */
+    border-radius: 5px;
+    box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
 }
-.stock-StockPrice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.stock-StockTrendArrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  
+  .chart-btn:hover {
+    cursor: pointer;
+    background-color: rgba(229, 248, 248, 0.705);
+    transform: scale(1.02);
+  }
+
+
 .stock-StockTrendPercent {
   display: flex;
   align-items: center;
+  /* width: 30px; */
+  padding: 10px;
 }
