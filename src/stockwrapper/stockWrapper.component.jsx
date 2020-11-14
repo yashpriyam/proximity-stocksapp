@@ -42,7 +42,6 @@ const StockWrapper = () => {
     setSearchField(e.target.value);
   };
 
-  
   const stockDataWithTimeStampArray = Object.keys(stockDataWithTimeStampCache);
   const filteredStockDataWithTimeStampArray = stockDataWithTimeStampArray.filter(
     (stockName) => stockName.toLowerCase().includes(searchField.toLowerCase())
@@ -51,7 +50,7 @@ const StockWrapper = () => {
   return (
     <>
       <div className="stocks-wrapper">
-        <h5>Stocks</h5>
+        <div>Stocks</div>
         <div className="search-container">
           <input placeholder="Search stocks here" onChange={onSearchChange} />
         </div>
@@ -69,17 +68,3 @@ const StockWrapper = () => {
 };
 
 export default StockWrapper;
-
-// EVI
-// GOOG
-// LNKD
-// MSFT
-// AAPL
-// SHLD
-// TCK
-// EBR
-// EVA
-// YHOO
-// INTC
-// MU
-// AKS

@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import { AppStateContext } from "../appState/globalState.context"
-
+import "./stockPrice.style.css";
 
 const StockPrice = (props) => {
   const { currentStockPrice } = props;
-//   const { watchListStockDataDispatcher } = useContext(AppStateContext)
-//   const [watchListStockData, watchListStockDataReducer] = watchListStockDataDispatcher
-//   // console.log(watchListStockData);
 
   const [flicktheChanges, setFlickTheChanges] = useState(false);
-//   watchListStockDataReducer({type: 'update', value: currentStockPrice})
   useEffect(() => {
     setFlickTheChanges(true);
     setTimeout(() => {
@@ -17,8 +12,8 @@ const StockPrice = (props) => {
     }, 2000);
   }, [currentStockPrice]);
   return (
-    <td className={flicktheChanges ? "flickClass " : ""}>
-      ${currentStockPrice} USD
+    <td className={`${flicktheChanges ? "flickClass " : ""} stock-StockPrice`}>
+      ${currentStockPrice}
     </td>
   );
 };

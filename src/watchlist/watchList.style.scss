@@ -3,6 +3,7 @@
     flex-direction: column;
     overflow: scroll;
     border: 1px solid #888;
+    height: 300px;
 }
 .watch-stocks-container{
     height: 300px;
@@ -40,6 +41,6 @@ table{
     }
 }
 
-/* .watch-stocks-container:hover{
-    background-color: aqua;
-} */
+.delete-icon{
+    cursor: pointer;
+}

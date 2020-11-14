@@ -23,7 +23,7 @@ export const priceDataArrayForChartReducer = (state, action) => {
   return state;
 };
 
-export const stockHistory = [];
+export const stockHistory = {};
 export const stockHistoryReducer = (state, action) => {
   state = action;
   return state;
@@ -31,9 +31,7 @@ export const stockHistoryReducer = (state, action) => {
 
 export const watchListStockData = {};
 export const watchListStockDataReducer = (state, action) => {
-  // console.log(action);
   const { stock } = action.value;
-  // console.log(state);
   switch (action.type) {
     case "add":
       state[stock] = action.value;

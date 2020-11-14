@@ -21,7 +21,7 @@ const StockChartButton = (props) => {
 
   return (
     <td>
-      <button onClick={() => showStockChart()}>See Chart</button>
+      <button className='chart-btn' onClick={() => showStockChart()}>Chart</button>
     </td>
   );
 };

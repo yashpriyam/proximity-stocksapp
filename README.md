@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Curriculum Authoring Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A react application which allows you to view stocks data with real time updates, beign served by a web socket based server. Few extra features of this SPA is Charts for showing stock trends, drag and drop to create your personalised watch list of stocks and historical data of any any stock.
+## Live Tool
 
-## Available Scripts
+*[Stock Tool](https://proximity-stocksapp.netlify.app/)*
 
-In the project directory, you can run:
+## Project Demo
 
-### `npm start`
+![](proximity-stocks-app.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### GIFs can't be paused, so if you want to pause and read through the code flow,
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### here is the [YOUTUBE LINK FOR APP STRUCTURE FLOW](https://youtu.be/rzCp5etJPqE), without audio
 
-### `npm test`
+Currently the tool supports 3 levels of nesting or parent-child relationship.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- [x] **Sign In - Sign out:** For users to start with the tool, they need to Sign in to the application using their google id.
+- [x] **Stocks List:** List of all the stocks being sent by the web socket server. The list and prices get rugularly and dynamically updated, as the new values come by. The stock list also displays if the stock prices have increased or decreased, in percentage.
+- [x] **Stock Trend Chart:** Option to see the how a particular stock's prices have been trending on a chart. Feature implemented using react-highcharts
+- [x] **Stock History** Option to see history, in a tabular form, of price changes for any stock.
+- [x] **Personal Watch List:** Drag and Drop stocks form stock list to create your own personalised Watch list, for your favourite stocks. Remove them at will.
+- [x] **Search bar:** text based search box for searching through stocks in Stock List.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features which are in-developement:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Test cases
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Libraries and Frameworks used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React.js
+- Firebase for google authetication
+- node-sass
+- Fontawesome Icons
+- react-highcharts
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Liked the tool? Want to contribute? For getting started with the codebase:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The application uses es6.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+$ git clone https://github.com/yashpriyam/teachers-authoring-cra.git
+$ npm install
+$ npm start
+```
