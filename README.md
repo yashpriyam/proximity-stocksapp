@@ -4,6 +4,7 @@ A react application which allows you to view stocks data with real time updates,
 ## Live Tool
 
 *[Stock Tool](https://proximity-stocksapp.netlify.app/)*
+The link is broken, doesn't works.
 
 ## Project Demo
 
